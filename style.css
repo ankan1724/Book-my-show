@@ -1,58 +1,66 @@
 
 * {
-    margin: 0px;
+    margin: 4px;
     padding: 0;
-    
 }
 
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    position: relative;
-    left: 25%;
-    /* text-align: center; */
+    background-color: rgb(193, 223, 240);
+    
 }
 
 .container {
     max-width: 800px;
     margin: 20px auto;
-    background-color: #fff;
+    background-color: rgb(123, 182, 232);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
-h1 {
+h2 {
     text-align: center;
-    color: #333;
+    color: #a20808;
+    margin-bottom: 15px;
+    font-family: "Bungee Inline", sans-serif;
 }
 
 .js-movies {
     font-size: 18px;
+    margin-top: 10px;
     margin-bottom: 10px;
-    color: #555;
+    color: black
 }
 
 .js-select-movie span {
     display: block;
+    margin-top: 10px;
     margin-bottom: 10px;
+    
 }
 
 .js-select-movie label {
     font-size: 16px;
-    margin-left: 5px;
-    color: #444;
+    font-family: "Inconsolata", monospace;
+    margin-left: 1px;
+    color: black;
     cursor: pointer;
 }
-
-.dates {
-    margin-top: 20px;
+.date{
+    margin-top: 30px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.dates{
+    margin-bottom: 0px;
 }
 
 .dates button {
     padding: 8px 20px;
     margin-right: 10px;
+    margin-bottom: 9px;
     border: none;
     border-radius: 5px;
     background-color: #4CAF50;
@@ -60,8 +68,13 @@ h1 {
     font-size: 16px;
     cursor: pointer;
 }
+.dates button:active{
+    background-color: #0b9010;
+    box-shadow: 0 0 15px rgba(3, 96, 62, 0.2);
+}
 
 .js-selectDate {
+    margin-top: 0px;
     font-size: 16px;
     color: #555;
     margin-left: 10px;
@@ -73,7 +86,7 @@ h1 {
 
 .js-selectTime {
     font-size: 18px;
-    color: #555;
+    color: black;
     margin-bottom: 10px;
 }
 
@@ -93,20 +106,22 @@ h1 {
 }
 
 .seats span {
-    font-size: 16px;
-    color: #555;
+    margin-bottom: 10px;
+    font-size: 17px;
+    color: black;
 }
 
 #seatsDropdown {
     padding: 8px;
-    font-size: 16px;
-    border-radius: 5px;
+    font-size: 12px;
+    border-radius: 14px;
 }
 
 .js-priceSelector {
     font-size: 18px;
-    color: #555;
+    color: black;
     margin-top: 20px;
+   
 }
 
 .js-select-price span {
@@ -117,7 +132,7 @@ h1 {
 .js-select-price label {
     font-size: 16px;
     margin-left: 5px;
-    color: #444;
+    color: black;
     cursor: pointer;
 }
 
@@ -136,15 +151,34 @@ h1 {
 }
 
 .selectionDetails {
-    margin-top: 40px;
+    margin: 20px auto;
+    background-color: rgb(159, 195, 227);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+
 }
 
 .selectionDetails h2 {
-    color: #333;
+    color:black;
     margin-bottom: 10px;
 }
 
 .showDetails {
     font-size: 16px;
-    color: #555;
+    color: black;
+}
+#payment-button{
+    margin: 20px auto;
+    color: whi;
+    background-color: #a20808;
+    padding: 20px;
+    font-size: 15px;
+    border-style: none;
+    border-radius: 10px;
+    transition: background-color 15ms, box-shadow 15ms;
+}
+#payment-button:active{
+    background-color: #bf5a5a;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }

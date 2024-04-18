@@ -1,100 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js"></script>
-		<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+    
 </head>
-<body>
-   <div class="container" style="display: inline-block;">
-    <h1>Welcome to BookMyShow</h1><hr>
-    <div class="js-movies">Select your movie:</div>
-    <div class="js-select-movie">
-        <span>
-            <input type="radio" class="js-movie" name="movies" value="Interstellar" >
-            <label for="Interstellar">Interstellar</label>
-        </span>
-        <span>
-            <input type="radio" class="js-movie" name="movies" value="Forrest Gump" >
-            <label for="Forrest Gump">Forrest Gump</label>
-        </span>
-        <span>
-            <input type="radio" class="js-movie" name="movies" value="Godfather" >
-            <label for="Godfather">Godfather</label>
-        </span>
-        <span>
-            <input type="radio" class="js-movie" name="movies" value="Pulp Fiction" >
-            <label for="Pulp Fiction">Pulp Fiction</label>
-        </span>
-    </div>
-    <div>
-        Select Date:
-    </div>
-    <div class="dates">
-        <button onclick="
-            todaysDate()">Today</button>
-        <button onclick="
-            tomorrowsDate()">Tomorrow</button>
-        <button onclick="
-            dateSelector()">Select Other Date</button>
-        <span class="js-selectDate"></span>
-    </div>
-    <div class="js-showDate"></div>
-    <div class="js-Times">
-        <div class="js-selectTime">Select Time:</div>
-        <button class="js-time", onclick="
-          getTime(this)">10:00 AM</button>
-        <button class="js-time" onclick="
-          getTime(this)">01:00 PM</button>
-        <button class="js-time" onclick="
-          getTime(this)">04:00 PM</button>
-        <button class="js-time" onclick="
-          getTime(this)">07:00 PM</button>
-    </div>
-    <div class="js-showTime"></div>
-		<div class="seats">
-			<span>Please select no. of seats (max 6 per user):</span>
-			<select id="seatsDropdown">
-				<option value="0">0</option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-			</select>
-		</div>
-		<div class="js-showSeats"></div>
-		<div class="js-priceSelector">Select price per seat:</div>
-		<div class="js-select-price">
-			<span>
-					<input type="radio" class="js-price" name="price" value="150" >
-					<label for="150">Rs.150</label>
-			</span>
-			<span>
-					<input type="radio" class="js-price" name="price" value="220" >
-					<label for="220">Rs.220</label>
-			</span>
-			<span>
-					<input type="radio" class="js-price" name="price" value="300" >
-					<label for="300">Rs.300</label>
-			</span>
-			<span>
-					<input type="radio" class="js-price" name="price" value="400" >
-					<label for="400">Rs.400</label>
-			</span>
-		</div>
 
-		<div class="confirm">
-			<button onclick="confirm()", id="confirm-button">Confirm</button>
-		</div>
-	</div><hr>
-		<div class="selectionDetails">
-			<h2>Details</h2>
-			<div class="showDetails"></div>
-	
-	</div>
+<body>
+    <div class="container">
+        <h2>Welcome to the Retro-grand</h2>
+        <hr>
+        <div class="image1">
+          <img src="https://rukminim2.flixcart.com/image/850/1000/jsxjekw0/poster/p/h/x/medium-interstellar-e-interstellar-movies-poster-for-room-office-original-imafed464espvnzr.jpeg?q=90&crop=false"
+             class="logo">
+        </div>
+        <div class="image2">
+          <img src="https://rukminim2.flixcart.com/image/850/1000/kmns7m80/poster/f/z/g/medium-forrest-gump-is-1994-american-maxi-origins-jumbo-medium-original-imagfgb6uc5kdfry.jpeg?q=90&crop=false"
+            class="logo">
+        </div>
+        <div class="image3">
+          <img src="https://i.pinimg.com/736x/de/43/0f/de430f26b0b8434bbe64c8c96f3c94c2.jpg"
+            class="logo">
+        </div>
+        <div class="image4">
+          <img src="https://images-cdn.ubuy.co.in/653f9763c9fb060a774b8193-pulp-fiction-movie-poster-regular.jpg"
+            class="logo">
+        </div>
+        <div>
+           <p><a href="home.html", target="_blank"><button class="book-button">Book a movie</button></a></p>
+           <p><button class="show-button">Show bookings</button></p>
+        </div>
+    </div>
+    </body>
+
 </body>
+
 </html>

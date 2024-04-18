@@ -75,6 +75,7 @@ function getTime(button) {
   }
 
   document.querySelector('.js-showTime').innerHTML = `Selected Time: ${time} ${html}`;
+  return html;
 }
 
 
@@ -86,12 +87,11 @@ function seatCount() {
     document.querySelector('.js-showSeats').innerHTML = `No. of seats: ${count}`;
   }
 }
-// const count= document.querySelector('.seatsDropdown').value;
+
 document.addEventListener("click", function (event) {
   let containerDiv = document.querySelector('.seats');
   if (!containerDiv.contains(event.target)) {
-    // let count= document.getElementById("seatsDropdown").value;
-    // console.log(count);
+    
     seatCount();
     return count;
   }
@@ -109,22 +109,59 @@ function confirm() {
   selectedMovie = selectedMovieRadio ? selectedMovieRadio.value : null;
 
   if (selectedMovie === null) {
-    alert("Please select a movie.");
+
+    document.querySelector('.movie-error-msg').innerHTML = "Please select a movie!";
+    document.addEventListener("click", function (event) {
+      let containerDiv = document.querySelector('.js-select-movie');
+      if (containerDiv.contains(event.target)) {
+        document.querySelector('.movie-error-msg').innerHTML = '';
+      }
+    });
   }
   else {
-    if (fullDate === '' | time === '') {
-      alert('Please select date and time.');
-    } else {
-      if (count == 0) {
-        // console.log(count);
-        alert('Please select no. of seats.');
-      } else {
-        if (selectedPrice === null) {
-          console.log(selectedPrice)
-          alert('Please select seat price.');
-        } else {
-          calculatePrice();
-          showDetails();
+    if (fullDate === '') {
+      document.querySelector('.date-error-msg').innerHTML = "Please select a date!";
+      document.addEventListener("click", function (event) {
+        let containerDiv = document.querySelector('.dates');
+        if (containerDiv.contains(event.target)) {
+          document.querySelector('.date-error-msg').innerHTML = '';
+        }
+      });
+    }
+    else {
+      if (time === '') {
+        document.querySelector('.time-error-msg').innerHTML = "Please select a time slot!";
+        document.addEventListener("click", function (event) {
+          let containerDiv = document.querySelector('.js-time');
+          if (containerDiv.contains(event.target)) {
+            document.querySelector('.time-error-msg').innerHTML = '';
+          }
+        });
+      } 
+      else {
+        if (count == 0) {
+          document.querySelector('.seat-error-msg').innerHTML = "Please select a seats!";
+          document.addEventListener("click", function (event) {
+            let containerDiv = document.querySelector('#seatsDropdown');
+            if (containerDiv.contains(event.target)) {
+              document.querySelector('.seat-error-msg').innerHTML = '';
+            }
+          });
+        } 
+        else {
+          if (selectedPrice === null) {
+            document.querySelector('.price-error-msg').innerHTML = "Please select a ticket price!";
+            document.addEventListener("click", function (event) {
+              let containerDiv = document.querySelector('.js-select-price');
+              if (containerDiv.contains(event.target)) {
+               document.querySelector('.price-error-msg').innerHTML = '';
+              }
+            });
+          }
+          else {
+            calculatePrice();
+            showDetails();
+          }
         }
       }
     }
@@ -136,17 +173,18 @@ function confirm() {
 
 function showDetails() {
   if (!seatAvailability) {
-    alert("Selected time has no seats available. PLease select some other time");
+    document.querySelector('.error-Msg').innerHTML="No Seats available for selected time. Please select some other date/time!"
   } else {
+    document.querySelector('.error-Msg').innerHTML='';
     const html =
       `<p>Movie: ${selectedMovie}</p><p>Date: ${fullDate}</p><p>Time: ${time}</p><p>Seats: ${count}</p><p>Price : Rs.${selectedPrice} x ${count}</p><p>GST: 15%</p><p>Total: Rs.${totalPrice}`;
     document.querySelector('.showDetails').innerHTML = html;
   }
 }
 
-  function calculatePrice() {
-    let totalPriceBeforeGST = (selectedPrice * count);
-    totalPrice = totalPriceBeforeGST + (totalPriceBeforeGST * 0.15);
-  }
+function calculatePrice() {
+  let totalPriceBeforeGST = (selectedPrice * count);
+  totalPrice = totalPriceBeforeGST + (totalPriceBeforeGST * 0.15);
+}
 
 
